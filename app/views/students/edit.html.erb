@@ -1,0 +1,24 @@
+<h1>Actualizar Estudiante</h1>
+
+<%= form_for @student do |f| %>
+<%= link_to "ver todos", students_path %>
+
+<p>
+    <%= f.label :name, "Nombre" %><br>
+    <%= f.text_area :name %>
+</p>
+
+ <p>
+    <%= f.label :lastname, "Apellido" %><br>
+    <%= f.text_area :lastname %>
+</p>
+
+<p>
+    <%= f.label :ident, "código del estudiante" %><br>
+    <%= f.text_area :ident %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+<% end %>

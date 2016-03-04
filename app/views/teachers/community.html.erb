@@ -1,0 +1,14 @@
+<h1>Lista global de profesores</h1> <!--esto me sirve para agregar una vista igual a la lista de profesores sin que se pueda editar (le borro la parte de editar y eliminar y de resto la copio igual).IMPORTANTE ver el codigo en el archivo routes en la parte resources-->
+<ul>
+	<% @teacher.each do |teacher| %>
+
+		<li>
+		<p>Nombre: <%= teacher.name %></p>
+		<p>Apellidos: <%= teacher.lastname %></p>
+		<p>Código del profesor: <%= teacher.ident %></p>
+		</li>
+	
+	<% end %>
+</ul>
+
+<%= link_to "Ingresar nuevo profesor", new_teacher_path %>

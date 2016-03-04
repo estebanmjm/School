@@ -1,0 +1,18 @@
+<h1>Lista de Asignaturas</h1>
+
+<ul>
+	<% @course.each do |course| %>
+
+		<li>
+		<p>Nombre de la asignatura: <%= course.name %></p>
+		<p>Codigo: <%= course.code %></p>
+
+	    <%= link_to"Ver detalle", course_path(course)%> 
+		<%= link_to"editar", edit_course_path(course)%> 
+		<%= link_to"eliminar", course_path(course), method: :delete, data: {confirm: "estas seguro?"} %>
+		</li>
+	
+	<% end %>
+</ul>
+
+<%= link_to "Agregar Asignatura", new_course_path %>

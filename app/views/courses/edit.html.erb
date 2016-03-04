@@ -1,0 +1,19 @@
+<h1>Actualizar Asignatura</h1>
+
+<%= form_for @course do |f| %>
+<%= link_to "ver todas", course_path %>
+
+<p>
+    <%= f.label :name, "Nombre" %><br>
+    <%= f.text_area :name %>
+</p>
+
+ <p>
+    <%= f.label :code, "Codigo" %><br>
+    <%= f.text_area :code %>
+ </p>
+
+ <p>
+    <%= f.submit %>
+ </p>
+<% end %>

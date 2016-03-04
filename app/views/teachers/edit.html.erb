@@ -1,0 +1,24 @@
+<h1>Actualizar Profesor</h1>
+
+<%= form_for @teacher do |f| %>
+<%= link_to "ver todos", teachers_path %>
+
+<p>
+    <%= f.label :name, "Nombre" %><br>
+    <%= f.text_area :name %>
+</p>
+
+ <p>
+    <%= f.label :lastname, "Apellido" %><br>
+    <%= f.text_area :lastname %>
+</p>
+
+<p>
+    <%= f.label :ident, "Código del Profesor" %><br>
+    <%= f.text_area :ident %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+<% end %>

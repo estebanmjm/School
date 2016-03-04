@@ -1,0 +1,19 @@
+<h1>Lista de Profesores</h1>
+
+<ul>
+	<% @teacher.each do |teacher| %>
+
+		<li>
+		<p>Nombre: <%= teacher.name %></p>
+		<p>Apellidos: <%= teacher.lastname %></p>
+		<p>Código del profesor: <%= teacher.ident %></p>
+		
+	    <%= link_to"Ver detalle", teacher_path(teacher)%> 
+		<%= link_to"editar", edit_teacher_path(teacher)%> 
+		<%= link_to"eliminar", teacher_path(teacher), method: :delete, data: {confirm: "estas seguro?"} %>
+		</li>
+	
+	<% end %>
+</ul>
+
+<%= link_to "Ingresar nuevo profesor", new_teacher_path %>

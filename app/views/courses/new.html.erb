@@ -1,0 +1,19 @@
+<h1>Introducir Asignatura</h1>
+
+<%= form_for @course do |f| %>
+
+  <p>
+    <%= f.label :name, "Nombre de la asignatura" %><br>
+    <%= f.text_area :name %>
+  </p>
+
+  <p>
+    <%= f.label :code, "Codigo" %><br>
+    <%= f.text_area :code %>
+  </p>
+
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
