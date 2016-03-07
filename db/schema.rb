@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304145038) do
+ActiveRecord::Schema.define(version: 20160306225629) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 20160304145038) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "courses_students", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "student_id"
+  end
+
+  add_index "courses_students", ["course_id"], name: "index_courses_students_on_course_id"
+  add_index "courses_students", ["student_id"], name: "index_courses_students_on_student_id"
+
+  create_table "courses_teachers", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "teacher_id"
+  end
+
+  add_index "courses_teachers", ["course_id"], name: "index_courses_teachers_on_course_id"
+  add_index "courses_teachers", ["teacher_id"], name: "index_courses_teachers_on_teacher_id"
 
   create_table "feedbacks", force: :cascade do |t|
     t.string   "message"
@@ -33,6 +49,14 @@ ActiveRecord::Schema.define(version: 20160304145038) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "homeworks_students", id: false, force: :cascade do |t|
+    t.integer "homework_id"
+    t.integer "student_id"
+  end
+
+  add_index "homeworks_students", ["homework_id"], name: "index_homeworks_students_on_homework_id"
+  add_index "homeworks_students", ["student_id"], name: "index_homeworks_students_on_student_id"
 
   create_table "students", force: :cascade do |t|
     t.string   "name"

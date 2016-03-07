@@ -6,14 +6,21 @@
 		<li>
 		<p>Nombre: <%= student.name %></p>
 		<p>Apellidos: <%= student.lastname %></p>
-		<p>Código: <%= student.ident %></p>
-		
-	    <%= link_to"Ver detalle", student_path(student)%> 
-		<%= link_to"editar", edit_student_path(student)%> 
-		<%= link_to"eliminar", student_path(student), method: :delete, data: {confirm: "estas seguro?"} %>
+		<p>Código: <%= student.ident %></p> 
+		<p>Asignaturas:</p>
+		<p><% student.courses.each do |course| %>
+			<%= course.name %></p>
+
 		</li>
-	
-	<% end %>
+		<% end %>
+		<span>
+			<%= link_to"Ver detalle", student_path(student)%> 
+			<%= link_to"editar", edit_student_path(student)%> 
+			<%= link_to"eliminar", student_path(student), method: :delete, data: {confirm: "estas seguro?"} %>
+		</span>
+		<% end %>
 </ul>
 
+
 <%= link_to "Ingresar nuevo estudiante", new_student_path %>
+<%= link_to "Volver a consultas", root_path %>

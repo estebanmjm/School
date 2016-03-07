@@ -18,6 +18,11 @@
     <%= f.text_area :ident %>
 </p>
 
+<div>
+    <%= f.label :courses %>
+    <%= f.collection_check_boxes :course_ids, Course.all, :id, :name %>
+</div>
+
 <p>
     <%= f.submit %>
 </p>
